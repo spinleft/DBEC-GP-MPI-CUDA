@@ -1,0 +1,218 @@
+#  Type of rescaling of Gross–Pitaevskii equation.
+#  Possible values: 1 or 2.
+#  Required: yes
+#  Type: int
+   OPTION = 2
+
+#  Number of atoms in condensate.
+#  Required: yes
+#  Type: long
+   NATOMS = 5000
+
+#  Coefficient of the nonlinear term. If not defined, G0 is calculated as
+#     G0 = 4 * Pi * AS * NATOMS * a0
+#  where AS is contact interaction strength, NATOMS number of atoms in
+#  condensate, and a0 Bohr radius.
+#  Required: no
+#  Type: double
+#   G0 = 0.
+
+#  Coefficient that multiplies nonlinear term in non-stationary problem during
+#  final NRUN iterations.
+#  Required: yes
+#  Type: double
+   GPAR = 1.5
+
+#  Coefficient of the dipolar nonlinearity. If not defined, GDD0 is calculated
+#  as
+#     GDD0 = 3 * ADD * NATOMS * a0
+#  where ADD is dipole-dipole interaction strength, NATOMS number of atoms in
+#  condensate, and a0 Bohr radius.
+#  Required: no
+#  Type: double
+#   GDD0 = 3.
+
+#  Coefficient that multiplies dipolar nonlinear term in non-stationary
+#  problem during final NRUN iterations.
+#  Required: yes
+#  Type: double
+   GDDPAR = 1.
+
+#  Dipolar potential cut off.
+#  Required: yes
+#  Type: double
+   CUTOFF = 10.
+
+#  Unit of length. Required if G0 or GDD0 are not defined.
+#  Required: conditionally
+#  Type: double
+   AHO = 1.e-6
+
+#  Contact interaction strength in units of Bohr radius. Required if G0 is not
+#  defined.
+#  Required: conditionally
+#  Type: double
+   AS = 100.
+
+#  Dipole-dipole interaction strength in units of Bohr radius. Required if
+#  GDD0 is not defined.
+#  Required: conditionally
+#  Type: double
+   ADD = 132.7
+
+#  Number of discretization points in the x-direction.
+#  Required: yes
+#  Type: long
+   NX = 480
+
+#  Number of discretization points in the y-direction.
+#  Required: yes
+#  Type: long
+   NY = 480
+
+#  Number of discretization points in the z-direction.
+#  Required: yes
+#  Type: long
+   NZ = 250
+
+#  Spatial discretization step in the x-direction.
+#  Required: yes
+#  Type: double
+   DX = 0.2
+
+#  Spatial discretization step in the y-direction.
+#  Required: yes
+#  Type: double
+   DY = 0.2
+
+#  Spatial discretization step in the z-direction.
+#  Required: yes
+#  Type: double
+   DZ = 0.2
+
+#  Time discretization step.
+#  Required: yes
+#  Type: double
+   DT = 0.005
+
+#  Gamma coefficient of anisotropy of the trap.
+#  Required: yes
+#  Type: double
+   GAMMA = 0.5
+
+#  Nu coefficient of anisotropy of the trap (omega_y / omega_x).
+#  Required: yes
+#  Type: double
+   NU = 1.0
+
+#  Lambda coefficient of anisotropy of the trap (omega_z / omega_x).
+#  Required: yes
+#  Type: double
+   LAMBDA = 1.5
+
+#  Number of iterations to introduce the nonlinearities G0 and GDD0.
+#  Required: yes
+#  Type: long
+   NSTP = 500
+
+#  Number of subsequent iterations with fixed nonlinearities G and GD.
+#  Required: yes
+#  Type: long
+   NPAS = 500
+
+#  Number of final iterations with fixed nonlinearities G and GD.
+#  Required: yes
+#  Type: long
+   NRUN = 0
+
+#  Output file with the summary of final values of all physical quantities. If
+#  not defined, standard output will be used.
+#  Required: no
+#  Type: string
+   OUTPUT = real3d-out
+
+#  Output file with RMS values. The values are written after initialization,
+#  subsequent NSTP, NPAS, and final NRUN iterations. If not defined,
+#  the wave function will not be saved.
+#  Required: no
+#  Type: string
+#   RMSOUT = real3d-rms
+
+#  Output file with RMS values during the time evolution. The values are written in
+#  subsequent NPAS and final NRUN iterations. If not defined,
+#  the wave function will not be saved.
+#  Required: no
+#  Type: string
+#   DYNAOUT = real3d-dyna
+
+#  Output file with the initial wave function. Only 1D sections along
+#  coordinate axes of the wave function are saved, which is designated by a
+#  suffix x, y, or z. If not defined, the initial wave function will not be
+#  saved.
+#  Required: no
+#  Type: string
+#   INITOUT = real3d-den-init
+
+#  Output file with the wave function obtained after the first NSTP iterations,
+#  which introduce nonlinearities G0 and GDD0. Only 1D sections along
+#  coordinate axes of the wave function are saved, which is designated by a
+#  suffix x, y, or z. If not defined, the wave function will not be saved.
+#  Required: no
+#  Type: string
+#   NSTPOUT = real3d-den-nstp
+
+#  Output file with the wave function obtained after the subsequent NPAS
+#  iterations, with the fixed nonlinearity G0. Only 1D sections along
+#  coordinate axes of the wave function are saved, which is designated by a
+#  suffix x, y, or z. If not defined, the wave function will not be saved.
+#  Required: no
+#  Type: string
+#   NPASOUT = real3d-den
+
+#  Output file with the final wave function obtained after the final NRUN
+#  iterations. Only 1D sections along coordinate axes of the wave function are
+#  saved, which is designated by a suffix x, y, or z. If not defined, the wave
+#  function will not be saved.
+#  Required: no
+#  Type: string
+#   NRUNOUT = real3d-den-nrun
+
+#  Discretization step in the x-direction used to save wave functions.
+#  It's required if any of wave function outputs (INITOUT, NPASOUT,
+#  NRUNOUT) is defined.
+#  Required: conditionally
+#  Type: long
+   OUTSTPX = 1
+
+#  Discretization step in the y-direction used to save wave functions. Required
+#  if any of wave function output files (INITOUT, NPASOUT, NRUNOUT) is defined.
+#  Required: conditionally
+#  Type: long
+   OUTSTPY = 1
+
+#  Discretization step in the z-direction used to save wave functions. Required
+#  if any of wave function output files (INITOUT, NPASOUT, NRUNOUT) is defined.
+#  Required: conditionally
+#  Type: long
+   OUTSTPZ = 1
+
+#  Time discretization step used to save RMS of the wave function. Required if
+#  DYNAOUT is defined.
+#  Required: conditionally
+#  Type: long
+   OUTSTPT = 1
+
+#  Number of arrays to allocate on GPU for trap potential and dipolar potential.
+#  If value is 0, no GPU memory is used and arrays will reside at CPU; value 1 will
+#  allocate one array (of size approximately NX * NY * NZ * 8 bytes); value 2 will
+#  allocate two such arrays. If not defined, program will default to a vaulue 2.
+#  Possible values: 0, 1 or 2.
+#  Required: no
+#  Type: int
+#  POTMEM = 2
+
+#  CUDA-enabled device to use. If not defined, program will use default
+#  (first available) device.
+#  Required: no
+#  Type: int
+#  DEVICE = 0

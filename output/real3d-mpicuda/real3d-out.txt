@@ -1,0 +1,25 @@
+ Real time propagation 3D,   OPTION = 2, MPI_NUM_PROCS = 16
+
+  Number of Atoms N = 5000, Unit of length AHO = 0.00000100 m
+  Scattering length a = 100.00*a0, Dipolar ADD = 132.70*a0
+  Nonlinearity G_3D = 332.4918, Strength of DDI GD_3D = 105.33272
+  Parameters of trap: GAMMA = 0.50, NU = 1.00, LAMBDA = 1.50
+
+ # Space Stp: NX = 128, NY = 96, NZ = 80
+  Space Step: DX = 0.200000, DY = 0.200000, DZ = 0.200000
+ # Time Stp : NSTP = 0, NPAS = 100, NRUN = 900
+   Time Step:   DT = 0.005000
+   Dipolar Cut off:   R = 10.000
+
+ * Change for dynamics: GPAR = 1.500, GDPAR = 1.000 *
+
+                  --------------------------------------------------------
+                    Norm      Chem        Ener/N     <r>     |Psi(0,0,0)|^2
+                  --------------------------------------------------------
+Initial :          1.0000     5.81621     4.33909    2.54499    0.02162
+After NPAS iter.:  1.0000     5.81920     4.33911    2.54358    0.02181
+After NRUN iter.:  1.0000     6.93923     5.00916    2.63297    0.01448
+                  --------------------------------------------------------
+
+ Initialization/allocation wall-clock time: 5.157 seconds
+ Calculation (iterations) wall-clock time: 7.032 seconds
