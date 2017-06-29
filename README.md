@@ -67,8 +67,7 @@ where `<nprocs>` is the number of processes invoked, `<programname>` is a name o
 
 **Example of running a program:**
 
-Run `imag3d-mpicuda` compiled program with the parameter input file `input/imag3d-input`, in
-4 parallel processes:
+Run `imag3d-mpicuda` compiled program with the parameter input file `input/imag3d-input`, in 4 parallel processes:
 
     mpiexec -np 4 ./imag3d-mpicuda -i input/imag3d-input
 
