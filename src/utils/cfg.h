@@ -23,6 +23,8 @@
  * The authors would be grateful for all information and/or comments
  * regarding the use of the programs.
  */
+#ifndef UTILS_CFG_H
+#define UTILS_CFG_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,3 +43,5 @@ char *cfg_read(const char *);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* UTILS_CFG_H */
